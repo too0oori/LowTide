@@ -7,6 +7,8 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
     }
 
+    const entries = []
+
     form.addEventListener('submit', function(event) {
         // Prevent the page from refreshing (which often clears the console log)
         event.preventDefault();
@@ -39,5 +41,9 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
             console.warn(`No message found for mood: "${mood}". Please check the mood value and ensure it matches one of the predefined moods.`);
         }
+
+        entries.push(entry);
+        console.table("Current entries:", entries);
+        
     });
 });
