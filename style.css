@@ -5,6 +5,36 @@
     border-radius: 5px;
 }
 
+.mood-selector {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.energy-selector {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.needs-selector {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.sleep-selector {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.socialbattery-selector {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
 .low-tide {
     background-color: #F5EEFA;
     color: #3C3489;

@@ -8,31 +8,110 @@
 </head>
 <body>
 
-    <form id="mood-form">
-        <select id="mood" name="mood">
-            <option value="High Tide">High Tide</option>
-            <option value="Low Tide">Low Tide</option>
-            <option value="Calm Waters">Calm Waters</option>
-            <option value="Rough Seas">Rough Seas</option>
-            <option value="Stormy Seas">Stormy Seas</option>
-        </select>
+    <div class="mood-selector">
+        <input type="radio" name="mood" value="High Tide" hidden>
+            <span class="mood-name">High Tide</span>
+            <span class="mood-desc">Energized and motivated. Great time to tackle big things.</span>
+        </label>
+    
+        <input type="radio" name="mood" value="Low Tide" hidden>
+            <span class="mood-name">Low Tide</span>
+            <span class="mood-desc">Drained and unmotivated. Good time to focus on self-care and recharge.</span>
+        </label>
 
-        <select id="energy" name="energy">
-            <option value="overload">Overload</option>
-            <option value="high">Expansion</option>
-            <option value="medium">Maintenance</option>
-            <option value="low">Restoration</option>
-        </select>
+        <input type="radio" name="mood" value="Calm Waters" hidden>
+            <span class="mood-name">Calm Waters</span>
+            <span class="mood-desc">Feeling balanced, steady, and in a good place. A great time to maintain your routine and enjoy the moment.</span>
+        </label>
 
-        <select id="focus" name="focus">
-            <option value="work">Work</option>
-            <option value="social">Social</option>
-            <option value="self-care">Self-Care</option>
-            <option value="hobbies">Hobbies</option>
-        </select>
+        <input type="radio" name="mood" value="Rough Seas" hidden>
+            <span class="mood-name">Rough Seas</span>
+            <span class="mood-desc">Feeling overwhelmed, stressed, and in need of support. A good time to reach out to friends or take a break.</span>
+        </label>
 
-        <button type="submit">Submit</button>
-    </form>
+        <input type="radio" name="mood" value="Stormy Seas" hidden>
+            <span class="mood-name">Stormy Seas</span>
+            <span class="mood-desc">Feeling anxious, uncertain, and in need of stability. A good time to practice grounding techniques and seek clarity.</span>
+        </label>
+    </div>
+
+    <div class="energy-selector">
+        <input type="radio" name="energy" value="Overload" hidden>
+            <span class="energy-name">Overload</span>
+            <span class="energy-desc">Too much on your plate. You're running on fumes — something needs to go.</span>
+        </label>
+
+        <input type="radio" name="energy" value="Expansion" hidden>
+            <span class="energy-name">Expansion</span>
+            <span class="energy-desc">Firing on all cylinders. Great time to take on challenges and grow.</span>
+        </label>
+        <input type="radio" name="energy" value="Maintenance" hidden>
+            <span class="energy-name">Maintenance</span>
+            <span class="energy-desc">Steady and grounded. Enough fuel to keep things moving without pushing too hard.</span>
+        </label>
+        <input type="radio" name="energy" value="Restoration" hidden>
+            <span class="energy-name">Restoration</span>
+            <span class="energy-desc">Running low. Your body and mind are asking for rest — listen to them.</span>
+        </label>
+    </div>
+
+    <div class="needs-selector">
+        <input type="radio" name="need" value="Rest" hidden>
+            <span class="need-name">Rest</span>
+            <span class="need-desc">I just need some time to myself to recharge and reset.</span>
+        </label>
+        <input type="radio" name="need" value="Connection" hidden>
+            <span class="need-name">Connection</span>
+            <span class="need-desc">I want to feel connected to others and supported in my relationships.</span>
+        </label>
+        <input type="radio" name="need" value="Structure" hidden>
+            <span class="need-name">Structure</span>
+            <span class="need-desc">I need to feel that I have a sense of order and predictability in my life.</span>
+        </label>
+        <input type="radio" name="need" value="Expression" hidden>
+            <span class="need-name">Expression</span>
+            <span class="need-desc">I want to explore my creativity and express myself authentically.</span>
+        </label>
+        <input type="radio" name="need" value="Solitude" hidden>
+            <span class="need-name">Solitude</span>
+            <span class="need-desc">I need some time alone even if it's not just from tiredness.</span>
+        </label>
+    </div>
+
+    <div class="sleep-selector">
+        <input type="radio" name="sleep" value="Sleepy" hidden>
+            <span class="sleep-name">Sleepy</span>
+            <span class="sleep-desc">Feeling drowsy and in need of rest. A good time to prioritize sleep and relaxation.</span>
+        </label>
+        <input type="radio" name="sleep" value="Rested" hidden>
+            <span class="sleep-name">Rested</span>
+            <span class="sleep-desc">Feeling refreshed and energized after a good night's sleep. A great time to take on the day.</span>
+        </label>
+        <input type="radio" name="sleep" value="Insomnia" hidden>
+            <span class="sleep-name">Insomnia</span>
+            <span class="sleep-desc">Struggling to fall asleep or stay asleep. A good time to practice good sleep hygiene and seek support if needed.</span>
+        </label>
+    </div>
+
+    <div class="socialbattery-selector">
+        <input type="radio" name="socialbattery" value="Full" hidden>
+            <span class="socialbattery-name">Full</span>
+            <span class="socialbattery-desc">Feeling socially energized and ready to connect with others. A great time to engage in social activities and build relationships.</span>
+        </label>
+        <input type="radio" name="socialbattery" value="Half Full" hidden>
+            <span class="socialbattery-name">Half Full</span>
+            <span class="socialbattery-desc">Feeling somewhat socially energized but also in need of some alone time. A good time to find a balance between socializing and self-care.</span>
+        </label>
+        <input type="radio" name="socialbattery" value="Empty" hidden>
+            <span class="socialbattery-name">Empty</span>
+            <span class="socialbattery-desc">Feeling socially drained and in need of solitude. A good time to prioritize alone time and recharge your social battery.</span>
+        </label>
+    </div>
+
+    <div class="notes">
+        <h2>Notes</h2>
+        <textarea id="notes" placeholder="Write your thoughts here..."></textarea>
+    </div>
 
     <div id="entries"></div>
 
