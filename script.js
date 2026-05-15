@@ -23,10 +23,15 @@ document.addEventListener('DOMContentLoaded', () => {
             'Angry': "Stormy waters. Take a break and practice deep breathing or meditation to manage your emotions."
         };
 
-        console.log("--- Lowtides Entry ---");
-        console.log(`Mood: ${mood}`);
-        console.log(`Energy: ${energy}`);
-        console.log(`Focus: ${focus}`);
+        const entry = {
+            mood: mood,
+            energy: energy,
+            focus: focus,
+            date: new Date().toLocaleDateString(),
+            id: Date.now(),
+        };
+        
+        console.table("New entry created:", entry);
     
         // Display message based on selected mood
         if (tideMessages[mood]) {
