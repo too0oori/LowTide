@@ -1,0 +1,42 @@
+.entry {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.low-tide {
+    background-color: #F5EEFA;
+    color: #3C3489;
+    border-radius: 50px;
+    border-color: #B8A9D9;
+}
+
+.high-tide {
+    background-color: #EAF6F8;
+    color: #085041;
+    border-radius: 50px;
+    border-color: #1D9E75; 
+}
+
+.calm-waters {
+    background-color:  #EEF3F8;
+    color: #0C447C;
+    border-radius: 50px;
+    border-color: #4A7FA5;
+}
+
+
+.rough-seas {
+    background-color: #FDF0EB;
+    color: #712B13;
+    border-radius: 50px;
+    border-color: #E07B3F;
+}
+
+.stormy-seas {
+    background-color: #1C1F2E;
+    color: #F2C4CE;
+    border-radius: 50px;
+    border-color: #E8A0B4;
+}
