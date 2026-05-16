@@ -1,25 +1,25 @@
 // Ensure the script runs after the HTML is fully loaded
 document.addEventListener('DOMContentLoaded', () => {
-    const form = document.querySelector('form');
+    const saveBtn = document.querySelector('#save-btn');
 
-    if (!form) {
-        console.error("Form not found. Please check your HTML selector.");
+    if (!saveBtn) {
+        console.error("Save button not found. Please check your HTML selector.");
         return;
     }
 
     const entries = [];
 
+        const moodClasses = {
+        'High Tide': 'high-tide',
+        'Low Tide': 'low-tide',
+        'Calm Waters': 'calm-waters',
+        'Rough Seas': 'rough-seas',
+        'Stormy Seas': 'stormy-seas'
+    };
+
     function renderEntries() {
         const entriesContainer = document.getElementById('entries'); 
         entriesContainer.innerHTML = ''; // Clear existing entries before re-rendering
-
-        const moodClasses = {
-            'High Tide': 'high-tide',
-            'Low Tide': 'low-tide',
-            'Calm Waters': 'calm-waters',
-            'Rough Seas': 'rough-seas',
-            'Stormy Seas': 'stormy-seas'
-        };
 
         entries.forEach(entry => { // loop
             console.log("rendering...");
@@ -29,8 +29,11 @@ document.addEventListener('DOMContentLoaded', () => {
             entryElement.innerHTML = `
                 <h3>${entry.mood}</h3>
                 <p>Energy: ${entry.energy}</p>
-                <p>Focus: ${entry.focus}</p>
+                <p>Need: ${entry.need}</p>
+                <p>Sleep: ${entry.sleep}</p>
+                <p>Social Battery: ${entry.socialbattery}</p>
                 <p>Date: ${entry.date}</p>
+                <p>Notes: ${entry.notes}</p>
             `;
             
             const moodClass = moodClasses[entry.mood];
@@ -43,42 +46,48 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    form.addEventListener('submit', function(event) {
+    saveBtn.addEventListener('click', function(event) {
         // Prevent the page from refreshing (which often clears the console log)
         event.preventDefault();
 
-        const mood = document.getElementById('mood').value;
-        const energy = document.getElementById('energy').value;
-        const focus = document.getElementById('focus').value;
+        const mood = document.querySelector('input[name="mood"]:checked')?.value;
+        const energy = document.querySelector('input[name="energy"]:checked')?.value;
+        const need = document.querySelector('input[name="need"]:checked')?.value;
+        const sleep = document.querySelector('input[name="sleep"]:checked')?.value;
+        const socialbattery = document.querySelector('input[name="socialbattery"]:checked')?.value;
+        const notes = document.getElementById('notes').value;
 
-        const tideMessages = {
-            'High Tide': "High tide! It's a great time to make progress on what matters most.",
-            'Low Tide': "Low tide. Take some time to rest and recharge before tackling your priorities.",
-            'Calm Waters': "Calm waters. A perfect moment for creating or reflecting.",
-            'Rough Seas': "Rough seas. Try some deep breathing or meditation to calm your mind.",
-            'Stormy Seas': "Stormy waters. Take a break and practice deep breathing or meditation to manage your emotions."
-        };
+        console.log({
+            mood,
+            energy,
+            need,
+            sleep,
+            socialbattery,
+            notes
+        });
+
+        if (!mood || !energy || !need || !sleep || !socialbattery) {
+            alert("Please fill out all fields before saving.");
+            return;
+        }
 
         const entry = {
             mood: mood,
             energy: energy,
-            focus: focus,
+            need: need,
+            sleep: sleep,
+            socialbattery: socialbattery,
+            notes: notes,
             date: new Date().toLocaleDateString(),
             id: Date.now(),
         };
         
         console.log("New entry created:", entry);
-    
-        // Display message based on selected mood
-        if (tideMessages[mood]) {
-            alert(tideMessages[mood]); //temporal alert for tesdting
-        } else {
-            console.warn(`No message found for mood: "${mood}". Please check the mood value and ensure it matches one of the predefined moods.`);
-        }
 
         entries.push(entry);
         console.table(entries);
 
         renderEntries();
+    
     });
 });

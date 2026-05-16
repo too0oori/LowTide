@@ -39,6 +39,7 @@ body {
 .socialbattery-card {
     background: #FFFFFF;
     border-radius: 12px;
+    opacity: 0.9;
     padding: 20px;
     text-align: center;
     cursor: pointer;
@@ -52,6 +53,18 @@ body {
 .mood-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+label:has(input:checked) {
+    transform: translateY(-4px);
+    border: 2px solid white;
+
+    box-shadow:
+        0 0 0 3px rgba(255,255,255,0.4),
+        0 10px 25px rgba(0,0,0,0.12);
+
+    
+    opacity: 1;
 }
 
 .hero-title {
