@@ -12,6 +12,9 @@ body {
     line-height: 1.5;
 }
 
+.section {
+    margin-bottom: 60px;
+}
 .mood-selector,
 .energy-selector,
 .needs-selector,
@@ -22,6 +25,11 @@ body {
     gap: 18px;
     max-width: 1200px;
     margin: 0 auto 40px auto;
+}
+
+.section-title {
+    font-size: 18px;
+    margin-bottom: 20px;
 }
 
 .mood-card,
@@ -39,6 +47,11 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.mood-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .hero-title {
@@ -78,6 +91,7 @@ body {
 .high-tide {
     background-color: #EAF6F8;
     color: #085041;
+    border: 2px solid transparent;
     border-color: #1D9E75;
 }
 .high-tide .card-title { color: #085041; }
@@ -88,6 +102,7 @@ body {
 .low-tide {
     background-color: #F5EEFA;
     color: #3C3489;
+    border: 2px solid transparent;
     border-color: #B8A9D9;
 }
 .low-tide .card-title { color: #3C3489; }
@@ -98,6 +113,7 @@ body {
 .calm-waters {
     background-color: #EEF3F8;
     color: #0C447C;
+    border: 2px solid transparent;
     border-color: #4A7FA5;
 }
 .calm-waters .card-title { color: #0C447C; }
@@ -108,6 +124,7 @@ body {
 .rough-seas {
     background-color: #FDF0EB;
     color: #712B13;
+    border: 2px solid transparent;
     border-color: #E07B3F;
 }
 .rough-seas .card-title { color: #712B13; }
@@ -118,6 +135,7 @@ body {
 .stormy-seas {
     background-color: #1C1F2E;
     color: #F2C4CE;
+    border: 2px solid transparent;
     border-color: #E8A0B4;
 }
 .stormy-seas .card-title { color: #F2C4CE; }
