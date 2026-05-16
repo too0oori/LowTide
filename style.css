@@ -1,78 +1,125 @@
-.entry {
-    border: 1px solid #ccc;
-    padding: 10px;
-    margin-bottom: 10px;
-    border-radius: 5px;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.mood-selector {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 20px;
+body {
+    background: #F6F0F2;
+    color: #2B2B2B;
+    font-family: Inter, sans-serif;
+    padding: 40px;
+    line-height: 1.5;
 }
 
-.energy-selector {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 20px;
-}
-
-.needs-selector {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 20px;
-}
-
-.sleep-selector {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 20px;
-}
-
+.mood-selector,
+.energy-selector,
+.needs-selector,
+.sleep-selector,
 .socialbattery-selector {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 18px;
+    max-width: 1200px;
+    margin: 0 auto 40px auto;
+}
+
+.mood-card,
+.energy-card,
+.need-card,
+.sleep-card,
+.socialbattery-card {
+    background: #FFFFFF;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+
     display: flex;
-    gap: 10px;
-    margin-bottom: 20px;
+    flex-direction: column;
+    align-items: center;
 }
 
-.low-tide {
-    background-color: #F5EEFA;
-    color: #3C3489;
-    border-radius: 50px;
-    border-color: #B8A9D9;
+.hero-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 36px;
+    font-weight: 600;
+    margin-bottom: 10px;
 }
 
+.hero-text {
+    font-size: 15px;
+    font-weight: 300;
+    opacity: 0.65;
+    line-height: 1.6;
+    text-align: center;
+}
+
+.card-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.card-desc{
+    font-size: 15px;
+    font-weight: 300;
+    opacity: 0.65;
+    line-height: 1.6;
+    text-align: center;
+}
+
+/* High Tide — teal/cyan */
 .high-tide {
     background-color: #EAF6F8;
     color: #085041;
-    border-radius: 50px;
-    border-color: #1D9E75; 
+    border-color: #1D9E75;
 }
+.high-tide .card-title { color: #085041; }
+.high-tide .card-desc  { color: #0F6E56; }
+.high-tide.selected    { border-color: #1D9E75; box-shadow: 0 0 0 3px rgba(29,158,117,0.15); }
 
+/* Low Tide — púrpura/haze */
+.low-tide {
+    background-color: #F5EEFA;
+    color: #3C3489;
+    border-color: #B8A9D9;
+}
+.low-tide .card-title { color: #3C3489; }
+.low-tide .card-desc  { color: #534AB7; }
+.low-tide.selected    { border-color: #B8A9D9; box-shadow: 0 0 0 3px rgba(184,169,217,0.2); }
+
+/* Calm Waters — azul suave */
 .calm-waters {
-    background-color:  #EEF3F8;
+    background-color: #EEF3F8;
     color: #0C447C;
-    border-radius: 50px;
     border-color: #4A7FA5;
 }
+.calm-waters .card-title { color: #0C447C; }
+.calm-waters .card-desc  { color: #185FA5; }
+.calm-waters.selected    { border-color: #4A7FA5; box-shadow: 0 0 0 3px rgba(74,127,165,0.15); }
 
-
+/* Rough Seas — coral/naranja */
 .rough-seas {
     background-color: #FDF0EB;
     color: #712B13;
-    border-radius: 50px;
     border-color: #E07B3F;
 }
+.rough-seas .card-title { color: #712B13; }
+.rough-seas .card-desc  { color: #993C1D; }
+.rough-seas.selected    { border-color: #E07B3F; box-shadow: 0 0 0 3px rgba(224,123,63,0.15); }
 
+/* Stormy Seas — dark/blush */
 .stormy-seas {
     background-color: #1C1F2E;
     color: #F2C4CE;
-    border-radius: 50px;
     border-color: #E8A0B4;
 }
-
-label:has(input:checked) {
-    border-style: solid;
-    border-width: 2px;
-    border-color: #d8c9c9;
-}
+.stormy-seas .card-title { color: #F2C4CE; }
+.stormy-seas .card-desc  { color: #E8A0B4; }
+.stormy-seas.selected    { border-color: #E8A0B4; box-shadow: 0 0 0 3px rgba(232,160,180,0.2); }

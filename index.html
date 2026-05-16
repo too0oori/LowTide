@@ -3,140 +3,222 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>LowTide</title>
+
     <link rel="stylesheet" href="style.css">
-</head>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
 <body>
 
-    <div class="mood-selector">
-        <label class="mood-card high-tide">
-            <input type="radio" name="mood" value="High Tide" hidden>
-                <span class="mood-name">High Tide</span>
-                <span class="mood-desc">Energized and motivated. Great time to tackle big things.</span>
-        </label>
-    
-        <label class="mood-card low-tide">
-            <input type="radio" name="mood" value="Low Tide" hidden>
-                <span class="mood-name">Low Tide</span>
-                <span class="mood-desc">Drained and unmotivated. Good time to focus on self-care and recharge.</span>
-            </label>
+    <main class="app">
 
-        <label class="mood-card calm-waters">
-            <input type="radio" name="mood" value="Calm Waters" hidden>
-                <span class="mood-name">Calm Waters</span>
-                <span class="mood-desc">Feeling balanced, steady, and in a good place. A great time to maintain your routine and enjoy the moment.</span>
-            </label>
+        <header class="hero">
+            <h1 class="hero-title">LowTide</h1>
+            <p class="hero-text">
+                A soft emotional check-in space for tracking your inner tides.
+            </p>
+        </header>
 
-        <label class="mood-card rough-seas">
-            <input type="radio" name="mood" value="Rough Seas" hidden>
-                <span class="mood-name">Rough Seas</span>
-                <span class="mood-desc">Feeling overwhelmed, stressed, and in need of support. A good time to reach out to friends or take a break.</span>
-            </label>
+        <!-- MOOD -->
 
-        <label class="mood-card stormy-seas">
-            <input type="radio" name="mood" value="Stormy Seas" hidden>
-                <span class="mood-name">Stormy Seas</span>
-                <span class="mood-desc">Feeling anxious, uncertain, and in need of stability. A good time to practice grounding techniques and seek clarity.</span>
-            </label>
-        </div>
+        <section class="section">
+            <h2 class="section-title">Mood</h2>
 
-    <div class="energy-selector">
+            <div class="mood-selector">
 
-        <label class="energy-card overload">
-            <input type="radio" name="energy" value="Overload" hidden>
-                <span class="energy-name">Overload</span>
-                <span class="energy-desc">Too much on your plate. You're running on fumes — something needs to go.</span>
-        </label>
+                <label class="mood-card high-tide">
+                    <input type="radio" name="mood" value="High Tide" hidden>
 
-        <label class="energy-card expansion">
-            <input type="radio" name="energy" value="Expansion" hidden>
-                <span class="energy-name">Expansion</span>
-                <span class="energy-desc">Firing on all cylinders. Great time to take on challenges and grow.</span>
-            </label>
-        <label class="energy-card maintenance">
-            <input type="radio" name="energy" value="Maintenance" hidden>
-                <span class="energy-name">Maintenance</span>
-                <span class="energy-desc">Steady and grounded. Enough fuel to keep things moving without pushing too hard.</span>
-            </label>
-        <label class="energy-card restoration">
-            <input type="radio" name="energy" value="Restoration" hidden>
-                <span class="energy-name">Restoration</span>
-                <span class="energy-desc">Running low. Your body and mind are asking for rest — listen to them.</span>
-            </label>
-    </div>
+                    <span class="card-title">High Tide</span>
 
-    <div class="needs-selector">
-        <label class="need-card">
-            <input type="radio" name="need" value="Rest" hidden>
-                <span class="need-name">Rest</span>
-                <span class="need-desc">I just need some time to myself to recharge and reset.</span>
-            </label>
-        <label class="need-card">
-            <input type="radio" name="need" value="Connection" hidden>
-                <span class="need-name">Connection</span>
-                <span class="need-desc">I want to feel connected to others and supported in my relationships.</span>
-            </label>
-        <label class="need-card">
-            <input type="radio" name="need" value="Structure" hidden>
-                <span class="need-name">Structure</span>
-                <span class="need-desc">I need to feel that I have a sense of order and predictability in my life.</span>
-            </label>
-        <label class="need-card">
-            <input type="radio" name="need" value="Expression" hidden>
-                <span class="need-name">Expression</span>
-                <span class="need-desc">I want to explore my creativity and express myself authentically.</span>
-            </label>
-        <label class="need-card">
-            <input type="radio" name="need" value="Solitude" hidden>
-            <span class="need-name">Solitude</span>
-            <span class="need-desc">I need some time alone even if it's not just from tiredness.</span>
-        </label>
-    </div>
+                    <span class="card-desc">
+                        Energized and motivated. Great time to tackle big things.
+                    </span>
+                </label>
 
-    <div class="sleep-selector">
-        <label class="sleep-card">
-            <input type="radio" name="sleep" value="Sleepy" hidden>
-                <span class="sleep-name">Sleepy</span>
-                <span class="sleep-desc">Feeling drowsy and in need of rest. A good time to prioritize sleep and relaxation.</span>
-            </label>
-        <label class="sleep-card">
-            <input type="radio" name="sleep" value="Rested" hidden>
-                <span class="sleep-name">Rested</span>
-                <span class="sleep-desc">Feeling refreshed and energized after a good night's sleep. A great time to take on the day.</span>
-            </label>
-        <label class="sleep-card">
-            <input type="radio" name="sleep" value="Insomnia" hidden>
-                <span class="sleep-name">Insomnia</span>
-                <span class="sleep-desc">Struggling to fall asleep or stay asleep. A good time to practice good sleep hygiene and seek support if needed.</span>
-            </label>
-    </div>
+                <label class="mood-card low-tide">
+                    <input type="radio" name="mood" value="Low Tide" hidden>
 
-    <div class="socialbattery-selector">
-        <label class="socialbattery-card">
-            <input type="radio" name="socialbattery" value="Full" hidden>
-                <span class="socialbattery-name">Full</span>
-                <span class="socialbattery-desc">Feeling socially energized and ready to connect with others. A great time to engage in social activities and build relationships.</span>
-            </label>
-        <label class="socialbattery-card">
-            <input type="radio" name="socialbattery" value="Half Full" hidden>
-                <span class="socialbattery-name">Half Full</span>
-                <span class="socialbattery-desc">Feeling somewhat socially energized but also in need of some alone time. A good time to find a balance between socializing and self-care.</span>
-            </label>
-        <label class="socialbattery-card">
-            <input type="radio" name="socialbattery" value="Empty" hidden>
-                <span class="socialbattery-name">Empty</span>
-                <span class="socialbattery-desc">Feeling socially drained and in need of solitude. A good time to prioritize alone time and recharge your social battery.</span>
-            </label>
-    </div>
+                    <span class="card-title">Low Tide</span>
 
-    <div class="notes">
-        <h2>Notes</h2>
-        <textarea id="notes" placeholder="Write your thoughts here..."></textarea>
-    </div>
+                    <span class="card-desc">
+                        Drained and unmotivated. Good time to focus on self-care and recharge.
+                    </span>
+                </label>
 
-    <div id="entries"></div>
+                <label class="mood-card calm-waters">
+                    <input type="radio" name="mood" value="Calm Waters" hidden>
 
+                    <span class="card-title">Calm Waters</span>
+
+                    <span class="card-desc">
+                        Feeling balanced, steady, and in a good place.
+                    </span>
+                </label>
+
+                <label class="mood-card rough-seas">
+                    <input type="radio" name="mood" value="Rough Seas" hidden>
+
+                    <span class="card-title">Rough Seas</span>
+
+                    <span class="card-desc">
+                        Feeling overwhelmed and emotionally turbulent.
+                    </span>
+                </label>
+
+                <label class="mood-card stormy-seas">
+                    <input type="radio" name="mood" value="Stormy Seas" hidden>
+
+                    <span class="card-title">Stormy Seas</span>
+
+                    <span class="card-desc">
+                        Anxiety, uncertainty, and emotional instability.
+                    </span>
+                </label>
+
+            </div>
+        </section>
+
+        <!-- ENERGY -->
+
+        <section class="section">
+            <h2 class="section-title">Energy</h2>
+
+            <div class="energy-selector">
+
+                <label class="energy-card overload">
+                    <input type="radio" name="energy" value="Overload" hidden>
+
+                    <span class="card-title">Overload</span>
+
+                    <span class="card-desc">
+                        Too much on your plate. Running on fumes.
+                    </span>
+                </label>
+
+                <label class="energy-card expansion">
+                    <input type="radio" name="energy" value="Expansion" hidden>
+
+                    <span class="card-title">Expansion</span>
+
+                    <span class="card-desc">
+                        Full of momentum and ready to grow.
+                    </span>
+                </label>
+
+                <label class="energy-card maintenance">
+                    <input type="radio" name="energy" value="Maintenance" hidden>
+
+                    <span class="card-title">Maintenance</span>
+
+                    <span class="card-desc">
+                        Stable, grounded, and moving steadily.
+                    </span>
+                </label>
+
+                <label class="energy-card restoration">
+                    <input type="radio" name="energy" value="Restoration" hidden>
+
+                    <span class="card-title">Restoration</span>
+
+                    <span class="card-desc">
+                        Low energy. Your body and mind need recovery.
+                    </span>
+                </label>
+
+            </div>
+        </section>
+
+        <!-- NEEDS -->
+
+        <section class="section">
+            <h2 class="section-title">Current Needs</h2>
+
+            <div class="needs-selector">
+
+                <label class="need-card">
+                    <input type="radio" name="need" value="Rest" hidden>
+
+                    <span class="card-title">Rest</span>
+
+                    <span class="card-desc">
+                        Time alone to reset and recharge.
+                    </span>
+                </label>
+
+                <label class="need-card">
+                    <input type="radio" name="need" value="Connection" hidden>
+
+                    <span class="card-title">Connection</span>
+
+                    <span class="card-desc">
+                        Emotional closeness and support from others.
+                    </span>
+                </label>
+
+                <label class="need-card">
+                    <input type="radio" name="need" value="Structure" hidden>
+
+                    <span class="card-title">Structure</span>
+
+                    <span class="card-desc">
+                        Order, routine, and predictability.
+                    </span>
+                </label>
+
+                <label class="need-card">
+                    <input type="radio" name="need" value="Expression" hidden>
+
+                    <span class="card-title">Expression</span>
+
+                    <span class="card-desc">
+                        Creativity, emotion, and authentic self-expression.
+                    </span>
+                </label>
+
+                <label class="need-card">
+                    <input type="radio" name="need" value="Solitude" hidden>
+
+                    <span class="card-title">Solitude</span>
+
+                    <span class="card-desc">
+                        Quiet distance from stimulation and noise.
+                    </span>
+                </label>
+
+            </div>
+        </section>
+
+        <!-- NOTES -->
+
+        <section class="notes-section">
+
+            <h2 class="section-title">Notes</h2>
+
+            <textarea
+                id="notes"
+                placeholder="Write your thoughts here..."
+            ></textarea>
+
+        </section>
+
+        <!-- ENTRIES -->
+
+        <section class="entries-section">
+
+            <h2 class="section-title">Entries</h2>
+
+            <div id="entries"></div>
+
+        </section>
+
+    </main>
 
     <script src="script.js"></script>
+
 </body>
 </html>
